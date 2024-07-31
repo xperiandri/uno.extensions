@@ -81,12 +81,12 @@
 		<PackageReference Include="Uno.Resizetizer" />-->
 	</ItemGroup>
 
+	<ItemGroup Condition="'$(IsBrowserWasm)'=='true'">
+		<PackageReference Include="Uno.Extensions.Logging.WebAssembly.Console" />
+	</ItemGroup>
 
-
-	<ItemGroup>
-		<None Update="MainPage.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</None>
+	<ItemGroup Condition="'$(_IsIOS)' == 'true' or '$(_IsCatalyst)' == 'true'">
+		<PackageReference Include="Uno.Extensions.Logging.OSLog" />
 	</ItemGroup>
 
 </Project>

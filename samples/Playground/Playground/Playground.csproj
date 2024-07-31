@@ -84,4 +84,12 @@
 
 	<!-- Reference generators props. This required only when referencing extensions project as source code (instead of packages) -->
 	<Import Project="..\..\..\src\Uno.Extensions.Core.Generators\buildTransitive\Uno.Extensions.Core.props" />
+
+	<ItemGroup Condition="'$(IsBrowserWasm)'=='true">
+		<PackageReference Include="Uno.Extensions.Logging.WebAssembly.Console" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(_IsIOS)' == 'true' or '$(_IsCatalyst)' == 'true'">
+		<PackageReference Include="Uno.Extensions.Logging.OSLog" />
+	</ItemGroup>
 </Project>
