@@ -4,8 +4,8 @@
 		of both WinUI and Uno.WinUI across Extensions and the MauiEmbedding Sample Project.
 	-->
 	<!-- <PropertyGroup Condition="$(SolutionName) != 'MauiEmbedding'">
-		<UnoVersion Condition="5.3.90 == '' AND !$(MSBuildProjectName.Contains('Maui'))">5.2.175</UnoVersion>
-		<UnoVersion Condition="5.3.90 == '' AND $(MSBuildProjectName.Contains('Maui'))">5.2.175</UnoVersion>
+		<UnoVersion Condition="$(UnoVersion) == '' AND !$(MSBuildProjectName.Contains('Maui'))">5.2.175</UnoVersion>
+		<UnoVersion Condition="$(UnoVersion) == '' AND $(MSBuildProjectName.Contains('Maui'))">5.2.175</UnoVersion>
 		<WinAppSdkVersion Condition="$(WinAppSdkVersion) == ''">1.5.240311000</WinAppSdkVersion>
 	</PropertyGroup> -->
 
@@ -65,15 +65,15 @@
 		<PackageVersion Include="Uno.Toolkit" Version="6.1.7" />
 		<!--<PackageVersion Include="Uno.Toolkit.UI" Version="5.0.15" />
 		<PackageVersion Include="Uno.Toolkit.WinUI" Version="5.0.15" />-->
-		<!--<PackageVersion Include="Uno.UI" Version="5.3.90" />-->
-		<PackageVersion Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" Version="5.3.90"/>
-		<!--<PackageVersion Include="Uno.UI.MSAL"  Version="5.3.90" />
-		<PackageVersion Include="Uno.UI.Runtime.WebAssembly" Version="5.3.90" />-->
+		<!--<PackageVersion Include="Uno.UI" Version="$(UnoVersion)" />-->
+		<PackageVersion Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" Version="$(UnoVersion)"/>
+		<!--<PackageVersion Include="Uno.UI.MSAL"  Version="$(UnoVersion)" />
+		<PackageVersion Include="Uno.UI.Runtime.WebAssembly" Version="$(UnoVersion)" />-->
 		<PackageVersion Include="Uno.UI.RuntimeTests.Engine" Version="0.37.0-dev.126" />
-		<PackageVersion Include="Uno.WinUI" Version="5.3.90" />
+		<PackageVersion Include="Uno.WinUI" Version="$(UnoVersion)" />
 		<PackageVersion Include="Uno.WinUI.Markup" Version="5.3.12" />
-		<PackageVersion Include="Uno.WinUI.MSAL" Version="5.3.90" />
-		<!--<PackageVersion Include="Uno.WinUI.Runtime.WebAssembly" Version="5.3.90" />-->
+		<PackageVersion Include="Uno.WinUI.MSAL" Version="$(UnoVersion)" />
+		<!--<PackageVersion Include="Uno.WinUI.Runtime.WebAssembly" Version="$(UnoVersion)" />-->
 		<PackageVersion Include="coverlet.collector" Version="3.1.2" />
 		<PackageVersion Include="xunit" Version="2.4.1" />
 		<PackageVersion Include="xunit.runner.visualstudio" Version="2.4.1" />
