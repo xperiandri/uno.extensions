@@ -37,10 +37,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Uno.Core.Extensions.Logging.Singleton"/>
-	</ItemGroup>
-
-	<ItemGroup>
 		<None Remove="appsettings.development.json" />
 		<None Remove="appsettings.json" />
 		<None Remove="data.json" />
@@ -85,11 +81,4 @@
 	<!-- Reference generators props. This required only when referencing extensions project as source code (instead of packages) -->
 	<Import Project="..\..\..\src\Uno.Extensions.Core.Generators\buildTransitive\Uno.Extensions.Core.props" />
 
-	<ItemGroup Condition="'$(IsBrowserWasm)'=='true'">
-		<PackageReference Include="Uno.Extensions.Logging.WebAssembly.Console" />
-	</ItemGroup>
-
-	<ItemGroup Condition="'$(IsIOSOrCatalyst)' == 'true'">
-		<PackageReference Include="Uno.Extensions.Logging.OSLog" />
-	</ItemGroup>
 </Project>
