@@ -89,7 +89,7 @@
 		<PackageReference Include="Uno.Extensions.Logging.WebAssembly.Console" />
 	</ItemGroup>
 
-	<ItemGroup Condition="'$(_IsIOS)' == 'true' or '$(_IsCatalyst)' == 'true'">
+	<ItemGroup Condition="'$(IsIOSOrCatalyst)' == 'true'">
 		<PackageReference Include="Uno.Extensions.Logging.OSLog" />
 	</ItemGroup>
 </Project>
